@@ -1,4 +1,3 @@
-require('@google-cloud/trace-agent').start();
 const {Logging} = require('@google-cloud/logging');
 const express = require('express');
 const app = express();
@@ -6,7 +5,7 @@ const path = require('path');
 const got = require('got');
 
 app.get('/', async (req, res) => {
-  projectId = 'niveus-research-project-273009', // Google Cloud Platform project ID
+  projectId = 'niveustraining', // Google Cloud Platform project ID
   logName = 'demo' // The name of the log to write to
   const logging = new Logging({projectId});
   const log = logging.log(logName);
