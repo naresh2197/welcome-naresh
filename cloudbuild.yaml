@@ -1,21 +1,8 @@
 steps:
  # build the container image
- - name: 'gcr.io/cloud-builders/docker'
-   args: ['build', '-t', 'gcr.io/niveus-research-project/sampleapp:$COMMIT_SHA', '.']
- # push the container image to Container Registry
- - name: 'gcr.io/cloud-builders/docker'
-   args: ['push', 'gcr.io/niveus-research-project/sampleapp:$COMMIT_SHA']
- # Deploy container image to Cloud Run
- - name: 'gcr.io/cloud-builders/gcloud'
-   args:
-   - 'run'
-   - 'deploy'
-   - 'sampleapp'
-   - '--image'
-   - 'gcr.io/niveus-research-project/sampleapp:$COMMIT_SHA'
-   - '--region'
-   - 'us-central1'
-   - '--platform'
-   - 'managed'
- - images:
-   - 'gcr.io/niveus-research-project/sampleapp:$COMMIT_SHA'
+ - name: gcr.io/cloud-builders/gcloud
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
+    gcloud compute instance-groups managed rolling-action restart joshtalk-cicd --zone asia-south1-a --project niveustraining
