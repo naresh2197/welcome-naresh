@@ -17,5 +17,5 @@ steps:
    - 'us-central1'
    - '--platform'
    - 'managed'
- images:
- - 'gcr.io/niveus-research-project/sampleapp:$COMMIT_SHA'
+ - images:
+   - 'gcr.io/niveus-research-project/sampleapp:$COMMIT_SHA'
