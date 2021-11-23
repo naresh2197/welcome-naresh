@@ -12,7 +12,7 @@ app.get('/', async (req, res) => {
   await log.write(log.entry({resource: {type: 'global'},severity: 'INFO'}, 'App recieved a request'));
   try {
     res
-      .sendFile(path.join(__dirname+'/templates/index.html'))
+      .sendFile(path.join(__dirname+'/index.html'))
       .status(200);
       //__dirname : It will resolve to your project folder.
     await log.write(log.entry({resource: {type: 'global'},severity: 'INFO'}, 'Successfully rendered web page'));
