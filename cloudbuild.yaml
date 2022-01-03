@@ -5,4 +5,4 @@ steps:
    args:
    - '-c'
    - |
-     gcloud compute instance-groups managed rolling-action restart joshtalk-cicd --zone asia-south1-a --project niveustraining
+     gcloud compute instance-groups managed rolling-action restart mig-poc-customer-osv1 --zone asia-south1-a --project niveustraining
