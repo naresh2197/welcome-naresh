@@ -1,8 +1,8 @@
 steps:
- # build the container image
- - name: gcr.io/cloud-builders/gcloud
-   entrypoint: 'bash'
-   args:
-   - '-c'
-   - |
+# build the container image
+- name: gcr.io/cloud-builders/gcloud
+  entrypoint: 'bash'
+  args:
+  - '-c'
+  - |
      gcloud compute instance-groups managed rolling-action restart mig-poc-custome-Osv1 --zone=asia-south1-a --project niveustraining
