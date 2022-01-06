@@ -5,4 +5,6 @@ steps:
   args:
   - '-c'
   - |
-     gcloud compute instance-groups managed rolling-action restart mig-poc-custome-Osv1 --zone=asia-south1-a --project niveustraining
+       gcloud beta compute ssh --zone "asia-south1-a" $ js-cicd --project "niveustraining" 
+    ls
+   
