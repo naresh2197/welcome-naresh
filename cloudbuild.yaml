@@ -5,6 +5,6 @@ steps:
   args:
   - '-c'
   - |
-       gcloud beta compute ssh --zone "asia-south1-a" $ js-cicd --project "niveustraining" 
+       gcloud beta compute ssh --zone "asia-south1-a" $ js-cicd --project "niveustraining" << EOF
     ls
-   
+   EOF
